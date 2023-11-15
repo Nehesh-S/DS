@@ -73,7 +73,7 @@ void display()
     node* tmp = head;
     while(tmp != NULL)
     {
-        printf("Student Name: %s \t\t Student ID: %d \n", tmp->name, tmp->id);
+        printf("Student Name: %s \t Student ID: %d \n", tmp->name, tmp->id);
         tmp = tmp->next;
     }
 }
