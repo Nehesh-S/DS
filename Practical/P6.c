@@ -1,0 +1,72 @@
+#include <stdio.h>
+
+#define MAX 10
+
+int left = -1;
+int right = -1;
+
+void enqueue(int queue[], int element)
+{
+    if(left == (right + 1) % MAX)
+    {
+        printf("Circular Queue Overflow\n");
+        return;
+    }
+    else
+    {
+        if(left == -1)
+            left = 0;
+        right = (right + 1) % MAX;
+        queue[right] = element;
+        printf("Operation Successful!\n");
+    }
+}
+
+void dequeue(int queue[])
+{
+    if(right == left)
+    {
+        printf("Circular Queue Underflow\n");
+        return;
+    }
+    else
+        left = (left + 1) % MAX;
+    printf("Operation Successful!\n");
+}
+
+void display(int queue[])
+{
+    int i = left;
+    do{
+        printf("Element : %d\n", queue[i]);
+        i = (i + 1) % MAX;
+    } while(i != (right + 1) % MAX);
+  
+}
+
+int main()
+{
+    int queue[MAX], op, no;
+    printf("Oprations:\n 1. Enqueue\n 2. Dequeue\n 3. Display Queue\n 4. Exit\n");
+    while(1)
+    {
+        printf("\nEnter Operation: ");
+        scanf("%d", &op);
+        switch(op)
+        {
+            case 1:
+                printf("Enter Element: ");
+                scanf("%d", &no);
+                enqueue(queue, no);
+                break;
+            case 2:
+                dequeue(queue);
+                break;
+            case 3:
+                display(queue);
+                break;
+            case 4:
+                return 0;
+        }
+    }
+}
