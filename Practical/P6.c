@@ -40,11 +40,13 @@ void dequeue(int queue[])
 
 void display(int queue[])
 {
-    int i = left;
-    do{
+    if(left == -1)
+    {
+        printf("Queue is Empty\n");
+        return;
+    }
+    for(int i = left; i <= right; i++)
         printf("Element : %d\n", queue[i]);
-        i = (i + 1) % MAX;
-    } while(i != (right + 1) % MAX);
   
 }
 
