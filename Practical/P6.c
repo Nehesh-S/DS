@@ -24,13 +24,17 @@ void enqueue(int queue[], int element)
 
 void dequeue(int queue[])
 {
-    if(right == left)
+    if(left < 0)
     {
         printf("Circular Queue Underflow\n");
         return;
     }
+    if(left == right)
+        left = right = -1;
+    else if(left == MAX - 1)
+        left = 0;
     else
-        left = (left + 1) % MAX;
+        left++;
     printf("Operation Successful!\n");
 }
 
