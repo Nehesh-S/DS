@@ -45,9 +45,12 @@ void display(int queue[])
         printf("Queue is Empty\n");
         return;
     }
-    for(int i = left; i <= right; i++)
+    int i = left;
+    do
+    {
         printf("Element : %d\n", queue[i]);
-  
+        i = (i + 1) % MAX;
+    } while (i != (right + 1) % MAX);
 }
 
 int main()
