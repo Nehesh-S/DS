@@ -46,6 +46,7 @@ int main()
     insertion_sort(list, len);
 
     printf("\nSorted List by Quantity:\n");
+    printf("Name\tQuantity\n");
     for (i = 0; i < len; i++)
         printf("%s\t%d\n", list[i].item, list[i].qty);
 }
