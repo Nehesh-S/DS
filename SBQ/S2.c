@@ -37,6 +37,7 @@ int main()
     insertion_sort(clothes, len);
 
     printf("\nSorted Inventory by Price:\n");
+    printf("Name\tUID\tPrice\tQuantity\n");
     for (i = 0; i < len; i++)
-        printf("%s\t%d\n", list[i].item, list[i].qty);
+        printf("%s\t%s\t%d\t%d\n", clothes[i].name, clothes[i].uid, clothes[i].price, clothes[i].qty);
 }
