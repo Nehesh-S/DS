@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 #define MAX 10
 
@@ -71,7 +70,7 @@ int main()
         {
             case 1:
                 printf("Enter Name: ");
-                gets(customer.name);
+                scanf("%s", customer.name);
                 enqueue(queue, customer);
                 break;
             case 2:
