@@ -11,34 +11,35 @@ typedef struct
     int qty;
 }product;
 
-void insertion_sort(product list[], int len)
+void quicksort(product clothes[], int first, int last)
 {
-
+    int i, j, pivot;
+    product tmp;
+    if(first < last)
+    {
+        pivot = first;
+        i = first;
+        j = last;
+        while(i < j)
+        {
+            while(clothes[i].price <= clothes[pivot].price && i < last)
+                i++;
+            while(clothes[j].price > clothes[pivot].price)
+                j--;
+            if(i < j)
+            {
+                tmp = clothes[i];
+                clothes[i] = clothes[j];
+                clothes[j] = tmp;
+            }
+        }
+        tmp = clothes[pivot];
+        clothes[pivot] = clothes[j];
+        clothes[j] = tmp;
+        quicksort(clothes, first, j-1);
+        quicksort(clothes, j+1, last);
+    }
 }
-// void quicksort(int number[25],int first,int last){
-//    int i, j, pivot, temp;
-//    if(first<last){
-//       pivot=first;
-//       i=first;
-//       j=last;
-//       while(i<j){
-//          while(number[i]<=number[pivot]&&i<last)
-//          i++;
-//          while(number[j]>number[pivot])
-//          j--;
-//          if(i<j){
-//             temp=number[i];
-//             number[i]=number[j];
-//             number[j]=temp;
-//          }
-//       }
-//       temp=number[pivot];
-//       number[pivot]=number[j];
-//       number[j]=temp;
-//       quicksort(number,first,j-1);
-//       quicksort(number,j+1,last);
-//    }
-// }
 
 int main()
 {
@@ -58,7 +59,7 @@ int main()
         scanf("%d", &clothes[i].qty);
     }
 
-    insertion_sort(clothes, len);
+    quicksort(clothes, 0, len);
 
     printf("\nSorted Inventory by Price:\n");
     printf("Name\tUID\tPrice\tQuantity\n");
