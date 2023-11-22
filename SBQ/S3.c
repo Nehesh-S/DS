@@ -15,21 +15,10 @@ void shellsort(song arr[], int n) {
     song tmp;
     for (gap = n/2; gap > 0; gap /= 2) {
         for (i = gap; i < n; i++) {
-            strcpy(tmp.title, arr[i].title);
-            strcpy(tmp.genre, arr[i].genre);
-            tmp.year = arr[i].year;
-            int j;
-            for (j = i; j >= gap && (strcmp(arr[j - gap].genre, tmp.genre) > 0 ||
-                                     (strcmp(arr[j - gap].genre, tmp.genre) == 0 &&
-                                      arr[j - gap].year > tmp.year));
-                 j -= gap) {
-                strcpy(arr[j].title, arr[j - gap].title);
-                strcpy(arr[j].genre, arr[j - gap].genre);
-                arr[j].year = arr[j - gap].year;
-            }
-            strcpy(arr[j].title, tmp.title);
-            strcpy(arr[j].genre, tmp.genre);
-            arr[j].year = tmp.year;
+            tmp = arr[i];
+            for (j = i; j >= gap && (strcmp(arr[j - gap].genre, tmp.genre) > 0 || (strcmp(arr[j - gap].genre, tmp.genre) == 0 && arr[j - gap].year > tmp.year)); j -= gap)
+                arr[j] = arr[j - gap];
+            arr[j] = tmp;
         }
     }
 }
