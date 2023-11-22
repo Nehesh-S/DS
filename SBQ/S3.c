@@ -10,21 +10,26 @@ typedef struct
     int year;
 }song;
 
-void shellsort_genre(song playlist[], int len)
-{
+void shellsort(song arr[], int n) {
     int gap, i, j;
     song tmp;
-    for(gap = len/2; gap > 0; gap /=2)
-    {
-        for(i = gap; i < len; i++)
-        {
-            tmp = playlist[i];
-            for(j = i; j >= gap; j -= gap)
-            {
-                if(strcmp(playlist[j - gap].genre, tmp.genre) > 0)
-                    playlist[j] = playlist[j - gap];
+    for (gap = n/2; gap > 0; gap /= 2) {
+        for (i = gap; i < n; i++) {
+            strcpy(tmp.title, arr[i].title);
+            strcpy(tmp.genre, arr[i].genre);
+            tmp.year = arr[i].year;
+            int j;
+            for (j = i; j >= gap && (strcmp(arr[j - gap].genre, tmp.genre) > 0 ||
+                                     (strcmp(arr[j - gap].genre, tmp.genre) == 0 &&
+                                      arr[j - gap].year > tmp.year));
+                 j -= gap) {
+                strcpy(arr[j].title, arr[j - gap].title);
+                strcpy(arr[j].genre, arr[j - gap].genre);
+                arr[j].year = arr[j - gap].year;
             }
-            playlist[j] = tmp;
+            strcpy(arr[j].title, tmp.title);
+            strcpy(arr[j].genre, tmp.genre);
+            arr[j].year = tmp.year;
         }
     }
 }
@@ -47,7 +52,7 @@ int main()
         scanf("%d", &playlist[i].year);
     }
 
-    shellsort_genre(playlist, len);
+    shellsort(playlist, len);
 
     printf("\nSorted Inventory by Price:\n");
     printf("Title\tGenre\tRelease Year\n");
