@@ -34,7 +34,7 @@ int main()
 {
     song playlist[MAX];
     int i, len;
-    printf("Enter Item Name, UID, Price and Quantity:\n(Max 10, Type 'Exit' to finish)\n");
+    printf("Enter Song Title, Genre and Release Year:\n(Max 10, Type 'Exit' to finish)\n");
     for(i = 0; i < MAX; i++)
     {
         scanf("%s", playlist[i].title);
