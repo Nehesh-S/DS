@@ -47,6 +47,22 @@ void search(node* root, int id)
         search(root->left, id);
 }
 
+void display(node* root)
+{
+    if(root->left == NULL && root->right == NULL)
+    {
+        printf("Employee name: %s\t Employee ID: %d" root->name, root->id);
+        return;
+    }
+    else
+    {
+        if(root->left != NULL)
+            display(root->left);
+        if(root->right != NULL)
+            display(root->right);
+    }
+}
+
 int main()
 {
     node* root;
