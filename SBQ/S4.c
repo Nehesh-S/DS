@@ -53,7 +53,7 @@ void display(str queue[])
     int i = left;
     do
     {
-        printf("Customer : %s \t Seat Number: %d\n", queue[i], i+1);
+        printf("Customer : %s \t Seat Number: %d\n", queue[i].name, i+1);
         i = (i + 1) % MAX;
     } while (i != (right + 1) % MAX);
 }
