@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 typedef struct node
 {
@@ -16,7 +18,7 @@ node* add(node* root, char name[], int id)
         if(tmp == NULL)
         {
             printf("Cannot Allocate Memory\n");
-            return;
+            return root;
         }
         strcpy(tmp->name, name);
         tmp->id = id;
