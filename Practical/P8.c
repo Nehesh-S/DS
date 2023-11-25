@@ -49,18 +49,35 @@ void search(node* root, int id)
 
 void display(node* root)
 {
+    // if(root->left == NULL && root->right == NULL)
+    // {
+    //     printf("Employee name: %s\t Employee ID: %d" root->name, root->id);
+    //     return;
+    // }
+    // else
+    // {
+    //     if(root->left != NULL)
+    //         display(root->left);
+    //     if(root->right != NULL)
+    //         display(root->right);
+    // }
+}
+
+void freeall(node* root)
+{
     if(root->left == NULL && root->right == NULL)
     {
-        printf("Employee name: %s\t Employee ID: %d" root->name, root->id);
+        free(root);
         return;
     }
     else
     {
         if(root->left != NULL)
-            display(root->left);
+            freeall(root->left);
         if(root->right != NULL)
-            display(root->right);
+            freeall(root->right);
     }
+
 }
 
 int main()
