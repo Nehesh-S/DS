@@ -42,7 +42,7 @@ void search(node* root, int id)
     }
     else if(root->id == id)
     {
-        printf("Employee Name: %s", root->name);
+        printf("Employee Name: %s\n", root->name);
         return;
     }
     else if(id > root->id)
@@ -105,6 +105,8 @@ int main()
             case 4:
                 freeall(root);
                 return 0;
+            default:
+                printf("Invalid Selection\n");
         }
     }
 }
