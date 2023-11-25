@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #define MAX 10
 
@@ -22,7 +23,7 @@ void enqueue(str queue[], str element)
             left = 0;
         right = (right + 1) % MAX;
         queue[right] = element;
-        printf("Booking Confirmed\nSeat Number: %d", right+1);
+        printf("Booking Confirmed\nSeat Number: %d\n", right+1);
     }
 }
 
