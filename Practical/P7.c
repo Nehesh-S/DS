@@ -115,6 +115,8 @@ int main()
             case 4:
                 freeall();
                 return 0;
+            default:
+                printf("Invalid Selection\n");
         }
     }
 }
