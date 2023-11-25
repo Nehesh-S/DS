@@ -29,6 +29,24 @@ node* add(node* root, char name[], int id)
         root = add(root->left, name, id);
 }
 
+void search(node* root, int id)
+{
+    if(root == NULL)
+    {
+        printf("Employee Not Found!");
+        return;
+    }
+    else if(root->id == id)
+    {
+        printf("Employee Name: %s", root->name);
+        return;
+    }
+    else if(id > root->id)
+        search(root->right, id);
+    else if(id < root->id)
+        search(root->left, id);
+}
+
 int main()
 {
     node* root;
