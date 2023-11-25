@@ -29,6 +29,8 @@ node* add(node* root, char name[], int id)
         root = add(root->right, name, id);
     else if(id < root->id)
         root = add(root->left, name, id);
+
+    return root;
 }
 
 void search(node* root, int id)
@@ -51,18 +53,11 @@ void search(node* root, int id)
 
 void display(node* root)
 {
-    // if(root->left == NULL && root->right == NULL)
-    // {
-    //     printf("Employee name: %s\t Employee ID: %d" root->name, root->id);
-    //     return;
-    // }
-    // else
-    // {
-    //     if(root->left != NULL)
-    //         display(root->left);
-    //     if(root->right != NULL)
-    //         display(root->right);
-    // }
+    if (root != NULL) {
+        display(root->left);
+        printf("Employee name: %s\t Employee ID: %d", root->name, root->id);
+        display(root->right);
+    }
 }
 
 void freeall(node* root)
