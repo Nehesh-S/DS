@@ -26,9 +26,9 @@ node* add(node* root, char name[], int id)
         return tmp;
     }
     else if(id > root->id)
-        root = add(root->right, name, id);
+        root->right = add(root->right, name, id);
     else if(id < root->id)
-        root = add(root->left, name, id);
+        root->left = add(root->left, name, id);
 
     return root;
 }
@@ -79,7 +79,7 @@ void freeall(node* root)
 
 int main()
 {
-    node* root;
+    node* root = NULL;
     int op, id;
     char name[10];
     printf("Oprations:\n 1. Add Employee\n 2. Search Employee\n 3. Display Tree\n 4. Exit\n");
@@ -92,7 +92,7 @@ int main()
             case 1:
                 printf("Enter Employee Name and ID:\n");
                 scanf("%s %d", name, &id);
-                root = add(root, name, id);
+                add(root, name, id);
                 break;
             case 2:
                 printf("Enter Employee ID: ");
