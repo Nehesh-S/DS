@@ -92,7 +92,7 @@ int main()
             case 1:
                 printf("Enter Employee Name and ID:\n");
                 scanf("%s %d", name, &id);
-                add(root, name, id);
+                root = add(root, name, id);
                 break;
             case 2:
                 printf("Enter Employee ID: ");
