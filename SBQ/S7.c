@@ -92,8 +92,8 @@ int main()
         switch(op)
         {
             case 1:
-                printf("Enter Employee Name, ID, Position:\n");
-                scanf("%s %d %f", name, &id, pos);
+                printf("Enter Employee Name, ID and Position:\n");
+                scanf("%s %d %s", name, &id, pos);
                 root = add(root, name, id, pos);
                 break;
             case 2:
