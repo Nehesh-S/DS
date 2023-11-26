@@ -42,7 +42,7 @@ void search(node* root, int id)
     }
     else if(root->id == id)
     {
-        printf("Employee Name: %s\n", root->name);
+        printf("Employee Name: %s \t ID: %d\n", root->name, root->id);
         return;
     }
     else if(id > root->id)
