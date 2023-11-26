@@ -135,7 +135,7 @@ int main()
         switch(op)
         {
             case 1:
-                printf("Enter Student Name, ID ans GPA:\n");
+                printf("Enter Student Name, ID and GPA:\n");
                 scanf("%s %d %f", name, &id, &gpa);
                 add(name, id, gpa);
                 break;
