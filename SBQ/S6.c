@@ -83,9 +83,13 @@ void search(int id)
     while(tmp != NULL)
     {
         if(tmp->id == id)
+        {
             printf("Student Name: %s \t Student ID: %d \t Student GPA: %f \n", tmp->name, tmp->id, tmp->gpa);
+            return;
+        }
         tmp = tmp->next;
     }
+    printf("Student not Found\n");
 }
 
 void display_fw()
