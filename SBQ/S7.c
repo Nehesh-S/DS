@@ -39,7 +39,7 @@ void search(node* root, int id)
 {
     if(root == NULL)
     {
-        printf("Employee Not Found!");
+        printf("Employee Not Found!\n");
         return;
     }
     else if(root->id == id)
