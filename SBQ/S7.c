@@ -57,7 +57,7 @@ void display(node* root)
 {
     if (root != NULL) {
         display(root->left);
-        printf("Employee name: %s \t ID: %d \t Position: %f\n", root->name, root->id, root->pos);
+        printf("Employee name: %s \t ID: %d \t Position: %s\n", root->name, root->id, root->pos);
         display(root->right);
     }
 }
