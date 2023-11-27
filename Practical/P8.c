@@ -53,7 +53,8 @@ void search(node* root, int id)
 
 void display(node* root)
 {
-    if (root != NULL) {
+    if (root != NULL)
+    {
         display(root->left);
         printf("Employee name: %s\t Employee ID: %d\n", root->name, root->id);
         display(root->right);
