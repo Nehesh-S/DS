@@ -20,9 +20,7 @@ int main()
     for(i = 0; i < node; i++)
     {
         for(j = 0; j < node; j++)
-        {
             printf("%d\t", mat[i][j]);
-        }
         printf("\n");
     }
 }
