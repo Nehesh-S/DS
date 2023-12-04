@@ -6,7 +6,8 @@ typedef struct{
     float marks;
 }student;
 
-int main() {
+int main()
+{
     student student1 = {"Nehesh", 45, 95};
 
     printf("Student Details:\n");
