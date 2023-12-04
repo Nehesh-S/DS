@@ -21,6 +21,4 @@ int main() {
     printf("Name: %s\n", employee1.name);
     printf("Employee ID: %d\n", employee1.id);
     printf("Salary: %.2f\n", employee1.salary);
-
-    return 0;
 }
