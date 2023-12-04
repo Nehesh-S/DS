@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-float salary(float ctc) {
+float salary(float ctc)
+{
     float hra, da, ta, pf, ihs;
 
     hra = 0.4 * ctc;
@@ -13,7 +14,8 @@ float salary(float ctc) {
     return ihs;
 }
 
-int main() {
+int main()
+{
     float ctc;
     printf("Enter the basic salary: $");
     scanf("%f", &ctc);
