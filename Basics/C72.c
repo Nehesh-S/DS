@@ -21,9 +21,4 @@ int main()
             flag = strlen(str) - i - 1;
         }
     }
-    for(i = 0; i <= strlen(str); i++)
-    {
-        if(i != flag)
-            printf("%c", str[i]);
-    }
 }
