@@ -1,24 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 
-int find(const char *str, const char *word) {
+int find(const char *str, const char *word)
+{
     int strLen = strlen(str);
     int wordLen = strlen(word);
-    for (int i = 0; i <= strLen - wordLen; i++) {
+    for (int i = 0; i <= strLen - wordLen; i++)
+    {
         int j;
-        for (j = 0; j < wordLen; j++) {
-            if (str[i + j] != word[j]) {
+        for (j = 0; j < wordLen; j++)
+        {
+            if (str[i + j] != word[j])
                 break;
-            }
         }
-        if (j == wordLen) {
+        if (j == wordLen)
             return i;
-        }
     }
     return -1;
 }
 
-int main() {
+int main() 
+{
     char str[50];
     char word[10];
     printf("Enter a string: ");
