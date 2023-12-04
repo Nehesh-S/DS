@@ -1,11 +1,12 @@
 #include <stdio.h>
 
-typedef struct {
+typedef struct{
     float length;
     float width;
 }rec;
 
-int main() {
+int main()
+{
     rec rectangle;
     rec *ptrRectangle = &rectangle;
 
