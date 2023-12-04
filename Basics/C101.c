@@ -39,6 +39,4 @@ int main()
     sum = add(d1, d2);
 
     printf("\nSum of distances: %d feet %d inches\n", sum.feet, sum.inches);
-
-    return 0;
 }
