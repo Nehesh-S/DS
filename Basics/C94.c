@@ -13,6 +13,4 @@ int main() {
     printf("Name: %s\n", student1.name);
     printf("Roll Number: %d\n", student1.roll);
     printf("Marks: %.2f\n", student1.marks);
-
-    return 0;
 }
