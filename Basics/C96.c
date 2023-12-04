@@ -12,7 +12,8 @@ typedef struct{
     address add;
 }employee;
 
-int main() {
+int main()
+{
     employee employee1;
 
     printf("Enter employee details:\n");
