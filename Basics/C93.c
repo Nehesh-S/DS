@@ -1,12 +1,14 @@
 #include <stdio.h>
 
-void ref(int *a, int *b) {
+void ref(int *a, int *b)
+{
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
-int main() {
+int main()
+{
     int x, y;
     printf("Enter two values: ");
     scanf("%d %d", &x, &y);
