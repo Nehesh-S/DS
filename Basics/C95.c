@@ -17,7 +17,7 @@ int main() {
     printf("Salary: ");
     scanf("%f", &employee1.salary);
 
-    printf("Employee Details:\n");
+    printf("\nEmployee Details:\n");
     printf("Name: %s\n", employee1.name);
     printf("Employee ID: %d\n", employee1.id);
     printf("Salary: %.2f\n", employee1.salary);
