@@ -6,7 +6,8 @@ typedef struct {
     float salary;
 }employee;
 
-int main() {
+int main()
+{
     employee employee1;
 
     printf("Enter employee details:\n");
