@@ -1,25 +1,26 @@
 #include <stdio.h>
 
 typedef union{
-    char model[20];
-    int year;
-    float price;
-}car;
+    int integer;
+    float floatingPoint;
+    char character;
+}sample;
 
 int main()
 {
-    car car1;
-    
-    printf("Enter car details:\n");
-    printf("Model: ");
-    scanf("%s", car1.model);
-    printf("Year: ");
-    scanf("%d", &car1.year);
-    printf("Price: ");
-    scanf("%f", &car1.price);
+    sample myUnion;
 
-    printf("\nCar Details:\n");
-    printf("Model: %s\n", car1.model);
-    printf("Year: %d\n", car1.year);
-    printf("Price: %.2f\n", car1.price);
+    myUnion.integer = 42;
+    printf("Value of integer member: %d\n", myUnion.integer);
+
+    myUnion.floatingPoint = 3.14;
+    printf("Value of floatingPoint member: %.2f\n", myUnion.floatingPoint);
+
+    myUnion.character = 'A';
+    printf("Value of character member: %c\n", myUnion.character);
+
+    printf("\nAfter updating the union:\n");
+    printf("Value of integer member: %d\n", myUnion.integer);
+    printf("Value of floatingPoint member: %.2f\n", myUnion.floatingPoint);
+    printf("Value of character member: %c\n", myUnion.character);
 }
